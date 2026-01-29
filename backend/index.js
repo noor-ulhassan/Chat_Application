@@ -2,6 +2,7 @@ import express from "express";
 import dotenv from "dotenv";
 import dbConnect from "./config/db.js";
 import userRoute from "./routes/userRoute.js";
+import cookieParser from "cookie-parser";
 
 dotenv.config();
 
@@ -10,6 +11,7 @@ const PORT = process.env.PORT || 8080;
 
 // middleware
 app.use(express.json());
+app.use(cookieParser());
 
 // routes
 
